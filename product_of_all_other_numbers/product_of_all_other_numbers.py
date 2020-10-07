@@ -5,8 +5,26 @@ Returns: a List of integers
 def product_of_all_other_numbers(arr):
     # Your code here
 
-    pass
+    # multiply the current number by all the other numbers
+    # update current index as product
+        
 
+    prod = 1
+    # loop over arr
+    for i in arr:
+    # get the product of all values
+        prod *= i
+
+    # loop agian to update
+    for i in range(len(arr)):
+        # divide the prod by the current index to remove
+        arr[i] = prod / arr[i]
+
+    # return the arr
+    return arr
+
+        # first = arr[0:i]
+        # last = arr[i+1:len(arr)]
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
