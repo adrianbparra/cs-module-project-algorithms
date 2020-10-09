@@ -1,7 +1,10 @@
+import math
+
 '''
 Input: a List of integers
 Returns: a List of integers
 '''
+
 def product_of_all_other_numbers(arr):
     # Your code here
 
@@ -9,22 +12,29 @@ def product_of_all_other_numbers(arr):
     # update current index as product
         
 
-    prod = 1
-    # loop over arr
-    for i in arr:
-    # get the product of all values
-        prod *= i
+    # prod = 1
+    # # loop over arr
+    # for i in arr:
+    # # get the product of all values
+    #     prod *= i
 
-    # loop agian to update
+    # # loop agian to update
+    # for i in range(len(arr)):
+    #     # divide the prod by the current index to remove
+    #     arr[i] = prod / arr[i]
+
+    # # return the arr
+    # return arr
+    ###################################
+
+    newArr = []
+
     for i in range(len(arr)):
-        # divide the prod by the current index to remove
-        arr[i] = prod / arr[i]
-
-    # return the arr
-    return arr
-
-        # first = arr[0:i]
-        # last = arr[i+1:len(arr)]
+        product = math.prod(arr[:i] + arr[i+1:])
+        newArr.append(product)
+    return newArr
+      
+    # this is O(2n) can be done as O(n) without division
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
